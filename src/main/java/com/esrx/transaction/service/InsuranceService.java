@@ -14,7 +14,7 @@ public class InsuranceService {
     InsuranceRepo insuranceRepo;
 
 
-    @Transactional(propagation = Propagation.SUPPORTS)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public Insurance saveInsurance(Insurance insurance){
         System.out.println("Current Transaction Active/NotActive "+ TransactionSynchronizationManager.isActualTransactionActive());
         System.out.println("Current Transaction Name "+ TransactionSynchronizationManager.getCurrentTransactionName());
